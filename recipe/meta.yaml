@@ -1,5 +1,5 @@
 {% set name = "yaqd-dwyer" %}
-{% set version = "2022.7.0" %}
+{% set version = "2023.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-dwyer-{{ version }}.tar.gz
-  sha256: cb1133a91e8b8a73a48cd79153c67782306056664a1207abf57de3a3b3101740 
+  sha256: 8874b267688a8aa9c5a89ca4fa5be593d5d642c4b73cbec051e03941c1138fd0
 
 build:
   entry_points:
@@ -40,7 +40,7 @@ test:
 
 about:
   home: https://yaq.fyi
-  summary: yaq daemons for Dwyer instruments and controllers  
+  summary: yaq daemons for Dwyer instruments and controllers
   dev_url: https://github.com/yaq-project/yaqd-dwyer
   license: LGPL-3.0-only
   license_file: LICENSE
