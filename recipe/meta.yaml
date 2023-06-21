@@ -1,13 +1,13 @@
 {% set name = "yaqd-dwyer" %}
-{% set version = "2023.1.0" %}
+{% set version = "2023.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-dwyer-{{ version }}.tar.gz
-  sha256: 8874b267688a8aa9c5a89ca4fa5be593d5d642c4b73cbec051e03941c1138fd0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 87863d81c90180fc03da65e094c86fc1c5708525cf0ed42e3d074096c2b7693e
 
 build:
   entry_points:
