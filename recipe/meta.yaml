@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 87863d81c90180fc03da65e094c86fc1c5708525cf0ed42e3d074096c2b7693e
 
 build:
@@ -15,17 +15,17 @@ build:
     - yaqd-dwyer-16c = yaqd_dwyer._dwyer_16c:Dwyer16C.main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - flit-core
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - minimalmodbus
     - pyserial
-    - python >=3.7
+    - python >={{ python_min }}
     - yaqd-core >=2020.06.3
 
 test:
@@ -37,6 +37,7 @@ test:
     - yaqd-dwyer-16c --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://yaq.fyi
